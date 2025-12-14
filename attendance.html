@@ -51,14 +51,8 @@
     <p>© 2025 QR Code Attendance System</p>
 </footer>
 
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const subject = params.get("sub");
-    if (subject) {
-        document.getElementById("subjectTitle").innerText =
-            subject + " - Attendance Page";
-    }
-</script>
+<script src="attendance.js"></script>
+
 
 </body>
 </html>
