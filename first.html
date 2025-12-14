@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1 id="subjectTitle">Subject Attendance</h1>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="report.html">Report</a></li>
+    </ul>
+</nav>
+
+<section class="container">
+    <div class="card">
+        <h2>Scan QR Code</h2>
+        <p>Scan the QR code below to mark your attendance.</p>
+
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=QR-Attendance">
+        </div>
+
+        <h2>Student Details</h2>
+        <form class="form">
+            <label>Student Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Roll Number</label>
+            <input type="text" placeholder="Enter roll number">
+
+            <label>Department</label>
+            <input type="text" placeholder="Enter department">
+
+            <label>Date</label>
+            <input type="date">
+
+            <button type="submit" class="btn">Submit Attendance</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 QR Code Attendance System</p>
+</footer>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get("sub");
+    if (subject) {
+        document.getElementById("subjectTitle").innerText =
+            subject + " - Attendance Page";
+    }
+</script>
+
+</body>
+</html>
